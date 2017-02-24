@@ -20,12 +20,16 @@
 
 11.to_s(2)
 # => "1011"
+
 11[0]
 # => 1
+
 11[1]
 # => 1
+
 11[2]
 # => 0
+
 11[3]
 # => 1
 
@@ -51,12 +55,14 @@
 
 (~0b1001).to_s(2)                 # NOT
 # => "-1010"
-
-~0b1010 & 0b1111
-# => 5
+# NOTE: We don't get an exact negation because the negative bit was also flipped
+#       and negative numbers are stored differently than positive ones.
 
 5 << 1                            # LEFT-SHIFT
 # => 10
+# NOTE: Left-shifting a binary number is the same as multiplying by two,
+#       just like left shifting a decimal number (25) multiplies it by ten (250)
 
 5 >> 1                            # RIGHT-SHIFT
 # => 2
+# NOTE: Right-shifting is like dividing by two and dropping the remainder!
