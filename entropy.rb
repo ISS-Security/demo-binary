@@ -6,7 +6,7 @@ def entropy(string)
   0.upto(255) do |i|
     x = b.count(i)/sz
     if x > 0
-      e += -x * (Math.log(x) / Math.log(2))
+      e += -x * Math.log2(x)
     end
   end
   e

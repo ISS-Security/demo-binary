@@ -1,6 +1,5 @@
-require 'date'
+# frozen_string_literal: true
 
-## CLASS DATEPACK
 require 'date'
 
 # Class that holds a date, bit-packed into an integer

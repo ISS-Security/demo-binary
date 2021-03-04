@@ -1,3 +1,4 @@
+# Calculating maximum entropy of a set
 
 password_length = 12      # passwords allowed to be 12 chars long
 password_chars = 26       # only lowercase chars allowed
