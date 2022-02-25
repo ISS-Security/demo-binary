@@ -83,5 +83,5 @@ pd.month = 3
 pd.packed
 # => 1032823
 
-dp.date
+pd.date
 # => #<Date: 2017-03-23 ((2457836j,0s,0n),+0s,2299161j)>
