@@ -7,20 +7,6 @@
 # [A, B, C, D]
 -4 * (0.25) * Math.log2(0.25)
 
-# unidiomatic ruby entropy method
-def entropy(string)
-  e = 0
-  sz = string.bytesize.to_f
-  b = string.bytes
-  0.upto(255) do |i|
-    x = b.count(i)/sz
-    if x > 0
-      e += -x * Math.log2(x)
-    end
-  end
-  e
-end
-
 # idiomatic ruby entropy method
 def entropy(string)
   string
