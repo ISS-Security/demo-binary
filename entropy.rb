@@ -18,5 +18,5 @@ def entropy(string)
     end
 end
 
-# entropy('aaaabcdd') == 1.75
-# entropy('abcd')    == 2.00
+entropy('aaaabcdd')
+entropy('abcd')
