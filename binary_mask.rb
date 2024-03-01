@@ -3,7 +3,7 @@
 require 'date'
 
 # Class that holds a date, bit-packed into an integer
-class DatePack
+class PackedDate
   ## BINARY MASKS AND CONSTANTS
   YEAR_BITS       = 9
   MONTH_BITS      = 5
@@ -25,10 +25,15 @@ class DatePack
   end
 
   ## PACK BITS
-  def pack_date(date)
-    @packed = date.year << YEAR_BITS
-    @packed |= date.month << MONTH_BITS
-    @packed |= date.day
+  def self.from_date(date)
+    packed = date.year << YEAR_BITS
+    packed |= date.month << MONTH_BITS
+    packed |= date.day
+    new(packed)
+  end
+
+  def initialize(packed_date)
+    @packed = packed_date
   end
 
   ## UNPACK BITS
@@ -62,26 +67,26 @@ class DatePack
   end
 end
 
-pd = DatePack.new(Date.today)
-# => #<DatePack:0x007fdf7f8aa280 @packed=1032791>
+date = PackedDate.from_date(Date.today)
+# => #<PackedDate:0x0000000104701688 @packed=1036385>
+
+packed = date.packed
+# => 1036385
+
+pd = PackedDate.new(packed)
+# => #<PackedDate:0x0000000108b59ce0 @packed=1036385>
 
 pd.packed
-# => 1032791
+# => 1036385
 
 pd.year
-# => 2017
+# => 2024
 
 pd.month
-# => 2
-
-pd.day
-# => 23
-
-pd.month = 3
 # => 3
 
-pd.packed
-# => 1032823
+pd.day
+# => 01
 
 pd.date
-# => #<Date: 2017-03-23 ((2457836j,0s,0n),+0s,2299161j)>
+# => #<Date: 2024-03-01 ((2460371j,0s,0n),+0s,2299161j)>

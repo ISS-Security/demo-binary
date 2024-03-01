@@ -1,8 +1,8 @@
 # [A, A, A, A, B, C, D, D]
-(0.5) * Math.log2(0.5) +
-(0.125) * Math.log2(0.125) +
-(0.125) * Math.log2(0.125) +
-(0.25) * Math.log2(0.25)
+0.5   * Math.log2(0.5) +
+0.125 * Math.log2(0.125) +
+0.125 * Math.log2(0.125) +
+0.25  * Math.log2(0.25)
 
 # [A, B, C, D]
 -4 * (0.25) * Math.log2(0.25)
@@ -18,5 +18,5 @@ def entropy(string)
     end
 end
 
-# entropy('aaaabcdd') == 1.75
-# entropy('abcd')    == 2.00
+entropy('aaaabcdd')
+entropy('abcd')
