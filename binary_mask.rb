@@ -68,25 +68,17 @@ class PackedDate
 end
 
 date = PackedDate.from_date(Date.today)
-# => #<PackedDate:0x0000000104701688 @packed=1036385>
 
 packed = date.packed
-# => 1036385
 
 pd = PackedDate.new(packed)
-# => #<PackedDate:0x0000000108b59ce0 @packed=1036385>
 
 pd.packed
-# => 1036385
 
 pd.year
-# => 2024
 
 pd.month
-# => 3
 
 pd.day
-# => 01
 
 pd.date
-# => #<Date: 2024-03-01 ((2460371j,0s,0n),+0s,2299161j)>
